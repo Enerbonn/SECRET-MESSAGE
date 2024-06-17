@@ -21,41 +21,30 @@
             width: 100%;
             height: 100%;
             z-index: -1;
-            background-color: #1a1a1a;
-            color: #ff3333;
-            font-size: 1.2em;
-            line-height: 1.5;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            background-image: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 10px, #2d2d2d 10px, #2d2d2d 20px);
+            opacity: 0.1;
+            background: repeating-linear-gradient(45deg, #1a1a1a, #1a1a1a 10px, #2d2d2d 10px, #2d2d2d 20px), url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" width="200" height="200"><text x="0" y="20" fill="red" font-size="20">Top Secret Message</text><text x="0" y="40" fill="yellow" font-size="20">Restricted Area</text><text x="0" y="60" fill="red" font-size="20">Confidential</text></svg>');
+            background-size: cover;
         }
-        .spy-text {
-            font-size: 2em;
-            font-weight: bold;
+        h1 {
+            font-size: 2.5em;
             color: #ff3333;
-            text-transform: uppercase;
-            letter-spacing: 5px;
         }
-        .top-secret {
-            font-size: 1.2em;
+        p, input, button {
             margin-top: 10px;
-            color: #ffcc00;
         }
         input[type=text] {
             padding: 10px;
             font-size: 1em;
-            margin-top: 10px;
             border: 2px solid #ff3333;
             border-radius: 5px;
             color: #ffffff;
             background-color: #333333;
-            width: 100%;
+            width: calc(100% - 24px);
             box-sizing: border-box;
         }
         button {
             padding: 10px 20px;
             font-size: 1em;
-            margin-top: 10px;
             background-color: #ff3333;
             color: white;
             border: none;
@@ -93,30 +82,17 @@
         }
         /* Media query for smaller screens */
         @media (max-width: 600px) {
-            .spy-text {
+            h1 {
                 font-size: 1.5em;
             }
-            .top-secret {
-                font-size: 1em;
-            }
-            input[type=text] {
-                font-size: 0.9em;
-            }
-            button {
+            input[type=text], button {
                 font-size: 0.9em;
             }
         }
     </style>
 </head>
 <body>
-    <div class="spy-background">
-        <div class="spy-text">Top Secret Message</div>
-        <div class="top-secret">Restricted Area</div>
-        <div class="top-secret">Confidential</div>
-        <div class="spy-text">Top Secret Message</div>
-        <div class="top-secret">Restricted Area</div>
-        <div class="top-secret">Confidential</div>
-    </div>
+    <div class="spy-background"></div>
     <h1>SECRET MESSAGE</h1>
     <p>Enter your first name:</p>
     <input type="text" id="firstNameInput" placeholder="Your First Name">
